@@ -59,7 +59,5 @@ class MainAdapter(val activity : Activity, val item : ArrayList<Thumbnail>) : Re
         }
     }
 
-    override fun getItemCount(): Int {
-        return item.size
-    }
+    override fun getItemCount() = item.size
 }

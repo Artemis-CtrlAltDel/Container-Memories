@@ -17,6 +17,7 @@ import com.example.amo.R
 import com.example.amo.entities.Post
 
 class PostAdapter(val item : ArrayList<Post>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+    val formatter = _ComplexFormatter()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val postOwnerPfp : ImageView = itemView.findViewById(R.id.post_owner_pfp)
@@ -84,8 +85,8 @@ class PostAdapter(val item : ArrayList<Post>) : RecyclerView.Adapter<PostAdapter
             postTime.text = item[position].post_time
             postDesc.text = item[position].post_description
             postKeys.text = item[position].post_keys
-            postLikes.text = item[position].post_likes
-            postReposts.text = item[position].post_reposts
+            postLikes.text = formatter.format(item[position].post_likes.toLong())
+            postReposts.text = formatter.format(item[position].post_reposts.toLong())
 
         }
     }

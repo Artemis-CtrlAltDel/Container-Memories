@@ -44,15 +44,15 @@ class ExploreFragment : Fragment() {
 
             val post1 = Post(
                 users[0], "59m", "first post !","#first #containers #Moons",
-                R.drawable.collection_9, "20,1 K", "1,900"
+                R.drawable.collection_9, 205564, 1900
             )
             val post2 = Post(
                 users[1], "20m", "second post !","#second #containers #Moons",
-                R.drawable.collection_6, "2,248", "607"
+                R.drawable.collection_6, 5656, 607
             )
             val post3 = Post(
                 users[2], "5s", "last post !","#last #containers #Moons",
-                R.drawable.collection_10, "184", "30"
+                R.drawable.collection_10, 184, 30
             )
 
             posts = arrayListOf(
