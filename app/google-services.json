@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "65270864174",
+    "project_id": "amo-db-8819a",
+    "storage_bucket": "amo-db-8819a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65270864174:android:0349e5d7139394db67c2bf",
+        "android_client_info": {
+          "package_name": "com.example.amo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65270864174-8rkktia7ahh4hjkng2h6o1o635cq44dd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTvXxDe9NrsA5ogXPSib-z5kUw-iXSlI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65270864174-8rkktia7ahh4hjkng2h6o1o635cq44dd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MemoriesActivity">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:backgroundTint="@color/transparent"
+            android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+            android:fitsSystemWindows="true"
+            android:paddingBottom="10dp"
+            android:gravity="top"
+            app:elevation="0dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/memories_toolbar_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="9dp"
+                android:background="@color/transparent"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardElevation="1dp"
+                app:cardCornerRadius="27dp">
+                <ImageView
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/memories_back"
+                    android:padding="9.5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back"
+                    android:layout_gravity="center_vertical|start"/>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:title="Containers"
+                    app:subtitle="Memories"
+                    app:titleTextColor="@color/white"
+                    app:subtitleTextColor="@color/white"
+                    app:titleTextAppearance="@style/Toolbar.TitleText"
+                    app:navigationIcon="@drawable/ic_back"
+                    />
+                <ImageView
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/memories_create"
+                    android:padding="9.5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add"
+                    android:layout_gravity="center_vertical|end"/>
+            </androidx.cardview.widget.CardView>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_anchorGravity="bottom"
+            android:background="@drawable/draw_white_gradient_bg"
+            android:paddingTop="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:layout_marginHorizontal="9dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/draw_mooner_btn"
+                    app:backgroundTint="@color/black"
+                    app:backgroundTintMode="src_over"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Become a Mooner"
+                    android:textSize="15sp"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

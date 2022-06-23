@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:background="@drawable/draw_home_land_bg"
+    android:backgroundTintMode="multiply"
+    android:backgroundTint="@color/color_multiply_bg_primary"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white">
+
+            <FrameLayout
+                android:id="@+id/fragment_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+            android:fitsSystemWindows="true"
+            app:elevation="0dp"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/transparent"
+                android:layout_marginHorizontal="12dp"
+                app:menu="@menu/menu_toolbar_main"
+                app:navigationIcon="@drawable/ic_menu"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/color_multiply_bg_secondary"
+            app:elevation="0dp"
+            app:hideOnScroll="true"
+            >
+            <LinearLayout
+                android:id="@+id/bottom_app_bar_set"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/bottom_app_bar_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <ImageView
+                        android:layout_weight="1"
+                        android:scaleX=".5"
+                        android:scaleY=".5"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_home"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/bottom_app_bar_explore"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:scaleX=".5"
+                        android:scaleY=".5"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_explore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/bottom_app_bar_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:scaleX=".5"
+                        android:scaleY=".5"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_profile"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

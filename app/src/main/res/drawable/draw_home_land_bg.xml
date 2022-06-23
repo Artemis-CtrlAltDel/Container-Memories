@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:src="@drawable/collection_bg" android:alpha="0.9"/>
+        <!--        <shape android:shape="rectangle">-->
+        <!--            <corners android:radius="50dp"/>-->
+        <!--            <gradient-->
+        <!--                android:type="sweep"-->
+        <!--                android:gradientRadius="150%p"-->
+        <!--                android:startColor="@color/color_primary_0"-->
+        <!--                android:centerColor="@color/color_primary_1"-->
+        <!--                android:endColor="@color/color_primary_2"-->
+        <!--                android:centerX="0.7"-->
+        <!--                android:centerY="0.5"-->
+        <!--                />-->
+        <!--        </shape>-->
+    </item>
+</layer-list>
