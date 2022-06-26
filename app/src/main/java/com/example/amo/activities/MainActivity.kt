@@ -21,6 +21,7 @@ import com.example.amo.adapters.MainAdapter
 import com.example.amo.R
 import com.example.amo.entities.Thumbnail
 import com.example.amo.databinding.ActivityMainBinding
+import com.example.amo.fragments.AddPostFragment
 import com.example.amo.fragments.ExploreFragment
 import com.example.amo.fragments.HomeFragment
 import com.example.amo.fragments.ProfileFragment
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val exploreFragment = ExploreFragment()
     private val profileFragment = ProfileFragment()
+    private val addPostFragment = AddPostFragment()
 
     private lateinit var fm: FragmentManager
     private lateinit var transaction: FragmentTransaction
@@ -79,6 +81,33 @@ class MainActivity : AppCompatActivity() {
             setContentView(root)
             setSupportActionBar(toolbar)
 
+            fm = supportFragmentManager
+
+            /** init home fragment : 0 **/
+            fragment = homeFragment
+
+            transaction = fm.beginTransaction()
+            transaction.replace(R.id.fragment_content, fragment)
+            transaction.commit()
+
+            (bottomAppBarHome.getChildAt(0) as ImageView)
+                .imageTintList = ColorStateList.valueOf(getColor(R.color.color_icon_active))
+
+            ((bottomAppBarHome.getChildAt(1)) as View).visibility = View.VISIBLE
+
+            var currentLinearLayoutId = bottomAppBarHome.id
+
+            bottomAppBarSet.children.forEach {
+                if (it.id != currentLinearLayoutId) {
+                    (((it as LinearLayout).getChildAt(0)) as ImageView)
+                        .imageTintList =
+                        ColorStateList.valueOf(getColor(R.color.color_icon_inactive))
+
+                    (((it as LinearLayout).getChildAt(1)) as View).visibility = View.INVISIBLE
+                }
+            }
+            /** init home fragment : 1 **/
+
             nestedScrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
                 if (scrollY > oldScrollY + 1) {
                     appBar.backgroundTintList = ColorStateList.valueOf(getColor(R.color.color_toolbar_bg))
@@ -105,7 +134,11 @@ class MainActivity : AppCompatActivity() {
 //                        true
 //                    }
                     R.id.post_create -> {
-                        Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
+                        transaction = fm.beginTransaction()
+                        transaction.replace(R.id.fragment_content, addPostFragment).commit()
+                        toolbar.visibility = View.INVISIBLE
+                        bottomAppBar.visibility = View.INVISIBLE
                         true
                     }
                     else -> false
@@ -121,32 +154,7 @@ class MainActivity : AppCompatActivity() {
 //                .setAllCorners(CornerFamily.ROUNDED, 80f)
 //                .build()
 
-            fm = supportFragmentManager
 
-            /** init home fragment : 0 **/
-            fragment = homeFragment
-            
-            transaction = fm.beginTransaction()
-            transaction.replace(R.id.fragment_content, fragment)
-            transaction.commit()
-
-            (bottomAppBarHome.getChildAt(0) as ImageView)
-                .imageTintList = ColorStateList.valueOf(getColor(R.color.color_icon_active))
-
-            ((bottomAppBarHome.getChildAt(1)) as View).visibility = View.VISIBLE
-
-            var currentLinearLayoutId = bottomAppBarHome.id
-
-            bottomAppBarSet.children.forEach {
-                if (it.id != currentLinearLayoutId) {
-                    (((it as LinearLayout).getChildAt(0)) as ImageView)
-                        .imageTintList =
-                        ColorStateList.valueOf(getColor(R.color.color_icon_inactive))
-
-                    (((it as LinearLayout).getChildAt(1)) as View).visibility = View.INVISIBLE
-                }
-            }
-            /** init home fragment : 1 **/
 
             listOf(
                 bottomAppBarHome,
@@ -162,8 +170,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     transaction = fm.beginTransaction()
-                    transaction.replace(R.id.fragment_content, fragment)
-                    transaction.commit()
+                    transaction.replace(R.id.fragment_content, fragment).commit()
 
                     (((it as LinearLayout).getChildAt(0)) as ImageView)
                         .imageTintList = ColorStateList.valueOf(getColor(R.color.color_icon_active))

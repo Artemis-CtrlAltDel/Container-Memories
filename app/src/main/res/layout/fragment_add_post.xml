@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.AddPostFragment">
+    tools:context=".fragments.AddPostFragment"
+    android:background="@drawable/draw_home_land_bg"
+    android:backgroundTintMode="multiply"
+    android:backgroundTint="@color/color_multiply_bg_primary"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.SigninActivity"
-        android:background="@drawable/draw_home_land_bg"
-        android:backgroundTintMode="multiply"
-        android:backgroundTint="@color/color_multiply_bg_primary"
         >
 
         <LinearLayout
@@ -35,16 +35,18 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/post_owner_pfp_package"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/draw_containers_options"
                     android:backgroundTint="@color/transparent"
                     android:outlineSpotShadowColor="@color/color_primary_3"
                     app:cardCornerRadius="50dp"
-                    app:cardElevation="37dp">
+                    app:cardElevation="37dp"
+                    >
 
                     <ImageView
                         android:id="@+id/post_owner_pfp"
@@ -64,6 +66,25 @@
                     android:text="what's on your mind ?"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/post_go_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/draw_containers_options"
+                    android:backgroundTint="@color/transparent"
+                    android:outlineSpotShadowColor="@color/color_primary_3"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="37dp">
+
+                    <ImageView
+                        android:id="@+id/post_cancel"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_gravity="top|center_horizontal"
+                        android:src="@drawable/ic_cancel" />
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -74,10 +95,11 @@
                 >
 
                 <EditText
+                    android:id="@+id/post_create"
                     android:gravity="start"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginVertical="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
                     android:layout_weight="1"
                     android:alpha=".8"
                     android:background="@drawable/draw_rounded_rectangle_signup"
@@ -94,15 +116,17 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/post_keys"
                     android:gravity="start"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:alpha=".8"
                     android:background="@drawable/draw_rounded_rectangle_signup"
                     android:backgroundTint="@color/color_multiply_bg_primary"
 
 
-                    android:hint="You can add hashtags to help people find your posts easily"
+                    android:hint="You can add to help hashtags (identity to your post)"
                     android:inputType="textMultiLine"
                     android:paddingVertical="20dp"
                     android:paddingHorizontal="20dp"
@@ -113,33 +137,50 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <FrameLayout
+                android:id="@+id/post_media_package"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginVertical="50dp"
                 android:alpha=".8"
                 android:background="@drawable/draw_rounded_rectangle_signup"
                 android:backgroundTint="@color/color_multiply_bg_primary"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center"
-                    android:text="You can add an image too"
-                    android:textColor="#c4c4c4"
-                    android:textSize="16sp" />
+                >
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_add_post_media"
-                    app:tint="#c4c4c4" />
+                    android:id="@+id/post_media"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    />
 
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/post_media_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:text="You can add an image too"
+                        android:textColor="#c4c4c4"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add_post_media"
+                        app:tint="#c4c4c4" />
+
+                </LinearLayout>
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -150,7 +191,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <Button
-                    android:id="@+id/post_new"
+                    android:id="@+id/post_submit"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
