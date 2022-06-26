@@ -15,9 +15,9 @@
 <!--        />-->
 
     <item
-        android:title="profile"
-        android:id="@+id/profile"
+        android:title="create"
+        android:id="@+id/post_create"
         app:showAsAction="always"
-        android:icon="@drawable/ic_profile_2"
+        android:icon="@drawable/ic_add"
         />
 </menu>

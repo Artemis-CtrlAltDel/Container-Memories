@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AddPostFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.SigninActivity"
+        android:background="@drawable/draw_home_land_bg"
+        android:backgroundTintMode="multiply"
+        android:backgroundTint="@color/color_multiply_bg_primary"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:paddingHorizontal="15dp"
+            android:layout_marginVertical="35dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/post_owner_pfp_package"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/draw_containers_options"
+                    android:backgroundTint="@color/transparent"
+                    android:outlineSpotShadowColor="@color/color_primary_3"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="37dp">
+
+                    <ImageView
+                        android:id="@+id/post_owner_pfp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="top|center_horizontal"
+                        android:src="@drawable/pfp" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:text="what's on your mind ?"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <EditText
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:alpha=".8"
+                    android:background="@drawable/draw_rounded_rectangle_signup"
+                    android:backgroundTint="@color/color_multiply_bg_primary"
+
+
+                    android:hint="You can add a description here"
+                    android:inputType="textMultiLine"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="20dp"
+                    android:textColor="@color/white"
+
+                    android:textColorHint="#c4c4c4"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha=".8"
+                    android:background="@drawable/draw_rounded_rectangle_signup"
+                    android:backgroundTint="@color/color_multiply_bg_primary"
+
+
+                    android:hint="You can add hashtags to help people find your posts easily"
+                    android:inputType="textMultiLine"
+                    android:paddingVertical="20dp"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="@color/color_harmony_0_0_1"
+
+                    android:textColorHint="#c4c4c4"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="20dp"
+                android:alpha=".8"
+                android:background="@drawable/draw_rounded_rectangle_signup"
+                android:backgroundTint="@color/color_multiply_bg_primary"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="You can add an image too"
+                    android:textColor="#c4c4c4"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_add_post_media"
+                    app:tint="#c4c4c4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha=".8"
+                android:background="@drawable/draw_rounded_rectangle_signup"
+                android:backgroundTint="@color/color_multiply_bg_primary"
+                android:gravity="center"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/post_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/draw_rounded_rectangle_signup"
+                    android:elegantTextHeight="true"
+                    android:fontFamily="sans-serif"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

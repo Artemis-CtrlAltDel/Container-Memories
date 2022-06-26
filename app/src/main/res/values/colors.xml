@@ -79,10 +79,10 @@
     <color name="color_icon_inactive">#fff</color>
 
     <color name="color_multiply_bg_primary">#303952</color>
-    <color name="color_multiply_bg_secondary">#2c2c54</color>
+    <color name="color_multiply_bg_secondary">#1f283e</color>
 
-    <color name="color_post_bg">#802C3E50</color>
+    <color name="color_post_bg">#BF1F283E</color>
 
-    <color name="color_toolbar_bg">#BF2C3E50</color>
+    <color name="color_toolbar_bg">#BF182C61</color>
 
 </resources>

@@ -54,7 +54,7 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottom_app_bar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_gravity="bottom"
             android:backgroundTint="@color/color_multiply_bg_secondary"
             app:elevation="0dp"
@@ -70,44 +70,61 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
                     >
                     <ImageView
                         android:layout_weight="1"
-                        android:scaleX=".5"
-                        android:scaleY=".5"
-                        android:layout_width="0dp"
-                        android:layout_gravity="center"
-                        android:layout_height="match_parent"
+                        android:scaleX="0.55"
+                        android:scaleY="0.55"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:src="@drawable/ic_home"/>
+                    <View
+                        android:layout_width="5.5dp"
+                        android:layout_height="5.5dp"
+                        android:background="@drawable/draw_rounded_rectangle_signup"
+                        android:backgroundTint="@color/color_harmony_0_0_1"
+                        android:visibility="invisible"
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/bottom_app_bar_explore"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
                     <ImageView
                         android:layout_weight="1"
-                        android:scaleX=".5"
-                        android:scaleY=".5"
-                        android:layout_width="0dp"
-                        android:layout_gravity="center"
-                        android:layout_height="match_parent"
+                        android:scaleX="0.55"
+                        android:scaleY="0.55"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
                         android:src="@drawable/ic_explore"/>
+                    <View
+                        android:layout_width="5.5dp"
+                        android:layout_height="5.5dp"
+                        android:background="@drawable/draw_rounded_rectangle_signup"
+                        android:backgroundTint="@color/color_harmony_0_0_1"
+                        android:visibility="invisible"
+                        />
                 </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/bottom_app_bar_profile"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_weight="1"
-                        android:scaleX=".5"
-                        android:scaleY=".5"
-                        android:layout_width="0dp"
-                        android:layout_gravity="center"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_profile"/>
-                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/bottom_app_bar_profile"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1">-->
+<!--                    <ImageView-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:scaleX=".5"-->
+<!--                        android:scaleY=".5"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:src="@drawable/ic_profile"/>-->
+<!--                </LinearLayout>-->
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
 

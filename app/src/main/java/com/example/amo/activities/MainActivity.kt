@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 //                        Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
 //                        true
 //                    }
-                    R.id.profile -> {
+                    R.id.post_create -> {
                         Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
                         true
                     }
@@ -133,21 +133,25 @@ class MainActivity : AppCompatActivity() {
             (bottomAppBarHome.getChildAt(0) as ImageView)
                 .imageTintList = ColorStateList.valueOf(getColor(R.color.color_icon_active))
 
+            ((bottomAppBarHome.getChildAt(1)) as View).visibility = View.VISIBLE
+
             var currentLinearLayoutId = bottomAppBarHome.id
-            /** init home fragment : 1 **/
 
             bottomAppBarSet.children.forEach {
                 if (it.id != currentLinearLayoutId) {
                     (((it as LinearLayout).getChildAt(0)) as ImageView)
                         .imageTintList =
                         ColorStateList.valueOf(getColor(R.color.color_icon_inactive))
+
+                    (((it as LinearLayout).getChildAt(1)) as View).visibility = View.INVISIBLE
                 }
             }
+            /** init home fragment : 1 **/
 
             listOf(
                 bottomAppBarHome,
                 bottomAppBarExplore,
-                bottomAppBarProfile
+//                bottomAppBarProfile
             ).forEach {
 
                 it.setOnClickListener {
@@ -164,6 +168,8 @@ class MainActivity : AppCompatActivity() {
                     (((it as LinearLayout).getChildAt(0)) as ImageView)
                         .imageTintList = ColorStateList.valueOf(getColor(R.color.color_icon_active))
 
+                    (((it as LinearLayout).getChildAt(1)) as View).visibility = View.VISIBLE
+
                     var currentLinearLayoutId = it.id
 
                     bottomAppBarSet.children.forEach {
@@ -171,6 +177,8 @@ class MainActivity : AppCompatActivity() {
                             (((it as LinearLayout).getChildAt(0)) as ImageView)
                                 .imageTintList =
                                 ColorStateList.valueOf(getColor(R.color.color_icon_inactive))
+
+                            (((it as LinearLayout).getChildAt(1)) as View).visibility = View.INVISIBLE
                         }
                     }
                 }
