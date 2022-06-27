@@ -48,9 +48,7 @@ class AddPostFragment : Fragment() {
 
             postHeaderPackage.startAnimation(animate_to_bottom)
             postMiddlePackage.startAnimation(animate_to_top)
-            animate_to_top.startOffset = 500
             postMediaPackage.startAnimation(animate_to_top)
-            animate_to_top.startOffset = 500
             postFooterPackage.startAnimation(animate_to_top)
 
 
