@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.annotation.RequiresApi
 import com.example.amo.R
 import com.example.amo.activities.MainActivity
@@ -23,8 +25,11 @@ class AddPostFragment : Fragment() {
     private var _binding : FragmentAddPostBinding? = null
     private val binding get() = _binding!!
 
-    private val pickImage = 100
-    private var imageUri: Uri? = null
+    private val pick_image = 100
+    private var image_uri: Uri? = null
+
+    private lateinit var animate_to_bottom: Animation
+    private lateinit var animate_to_top: Animation
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +42,18 @@ class AddPostFragment : Fragment() {
         _binding = FragmentAddPostBinding.inflate(inflater, container, false)
 
         binding.apply {
+
+            animate_to_bottom = AnimationUtils.loadAnimation(context, R.anim.anim_to_bottom)
+            animate_to_top = AnimationUtils.loadAnimation(context, R.anim.anim_to_top)
+
+            postHeaderPackage.startAnimation(animate_to_bottom)
+            postMiddlePackage.startAnimation(animate_to_top)
+            animate_to_top.startOffset = 500
+            postMediaPackage.startAnimation(animate_to_top)
+            animate_to_top.startOffset = 500
+            postFooterPackage.startAnimation(animate_to_top)
+
+
             postCancel.setOnClickListener {
                 startActivity(Intent(context, MainActivity::class.java))
 
@@ -45,7 +62,7 @@ class AddPostFragment : Fragment() {
 
             postMediaPackage.setOnClickListener {
                 val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-                startActivityForResult(gallery, pickImage)
+                startActivityForResult(gallery, pick_image)
             }
 
             postSubmit.setOnClickListener {
@@ -60,9 +77,9 @@ class AddPostFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK && requestCode == pickImage) {
-            imageUri = data?.data
-            binding.postMedia.setImageURI(imageUri)
+        if (resultCode == RESULT_OK && requestCode == pick_image) {
+            image_uri = data?.data
+            binding.postMedia.setImageURI(image_uri)
             binding.postMediaUpload.visibility = View.INVISIBLE
             binding.postMediaPackage.backgroundTintList = ColorStateList.valueOf(requireContext().getColor(R.color.transparent))
         }
