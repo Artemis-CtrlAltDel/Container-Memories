@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.view.WindowManager
@@ -16,6 +17,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.AuthFailureError
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import com.example.amo.adapters.MainAdapter
 import com.example.amo.R
@@ -28,6 +32,7 @@ import com.example.amo.fragments.ProfileFragment
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
@@ -78,6 +83,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            /** Volley : 0 **/
+            // Retrieve current user's profile.
+            /** Volley : 1 **/
+
             setContentView(root)
             setSupportActionBar(toolbar)
 
@@ -103,7 +112,7 @@ class MainActivity : AppCompatActivity() {
                         .imageTintList =
                         ColorStateList.valueOf(getColor(R.color.color_icon_inactive))
 
-                    (((it as LinearLayout).getChildAt(1)) as View).visibility = View.INVISIBLE
+                    ((it.getChildAt(1)) as View).visibility = View.INVISIBLE
                 }
             }
             /** init home fragment : 1 **/
@@ -175,7 +184,7 @@ class MainActivity : AppCompatActivity() {
                     (((it as LinearLayout).getChildAt(0)) as ImageView)
                         .imageTintList = ColorStateList.valueOf(getColor(R.color.color_icon_active))
 
-                    (((it as LinearLayout).getChildAt(1)) as View).visibility = View.VISIBLE
+                    ((it.getChildAt(1)) as View).visibility = View.VISIBLE
 
                     var currentLinearLayoutId = it.id
 
@@ -185,7 +194,7 @@ class MainActivity : AppCompatActivity() {
                                 .imageTintList =
                                 ColorStateList.valueOf(getColor(R.color.color_icon_inactive))
 
-                            (((it as LinearLayout).getChildAt(1)) as View).visibility = View.INVISIBLE
+                            ((it.getChildAt(1)) as View).visibility = View.INVISIBLE
                         }
                     }
                 }

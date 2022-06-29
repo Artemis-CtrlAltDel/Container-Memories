@@ -1,11 +1,9 @@
 package com.example.amo.activities
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -40,11 +38,13 @@ class SigninActivity : AppCompatActivity() {
                 var email = emailTextBox.text.toString()
                 var pass = passTextBox.text.toString()
 
-                var url = "http://192.168.8.104:8080/authenticate/"
+                var url = "http://192.168.8.103:8080/authenticate/"
                 var string_request : StringRequest = object : StringRequest(
                     Request.Method.POST, url,
                     {
                         val json = JSONObject(it)
+
+                        val token = json.getString("token").decode()
 //                        json.getString("token")
 
                         editor.putString("token", json.getString("token"))
@@ -69,7 +69,7 @@ class SigninActivity : AppCompatActivity() {
                         val params = HashMap<String, String>()
                         params.put("email",email)
                         params.put("pass", pass)
-                        return JSONObject(params as Map<String, String>).toString().toByteArray()
+                        return JSONObject(params as Map<*, *>).toString().toByteArray()
                     }
                 }
 
