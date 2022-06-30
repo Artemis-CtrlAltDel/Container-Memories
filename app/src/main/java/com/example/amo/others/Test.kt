@@ -1,73 +1,43 @@
-package com.example.amo.activities
+package com.example.amo.others
 
 import android.util.Base64
 import android.text.TextUtils
 import android.util.Patterns
 import java.lang.Exception
+import kotlin.math.floor
 
-fun String.decode(): String {
-     return Base64.decode(this, Base64.DEFAULT).toString(charset("UTF-8"))
-}
+fun String.decode() = Base64.decode(this, Base64.DEFAULT).toString(charset("UTF-8"))
 
 fun String.fetch(keyword:String): Pair<Boolean, String>{
      val pattern = "\"${keyword}\":\"?(.+)\"?"
 
-     try {
+     return try {
+
           val res = Regex(pattern).findAll(this).toList()
           if (res.size == 0)
-               return Pair(false, "Could not find the appropriate $keyword")
+               Pair(false, "Could not find the appropriate $keyword")
           else
-               return Pair(true, res[0].value.
-                    replace("\"", "").
-                    split(",")[0].
-                    split(":")[1])
+               Pair(true, res[0].value
+                    .replace("\"", "")
+                    .split(",")[0]
+                    .split(":")[1])
+
      }catch (e : Exception){
-          return Pair(false, "$e")
+          Pair(false, "$e")
      }
 
 }
 
-fun String.is_valid_email(): Boolean {
-     return if (TextUtils.isEmpty(this)) {
-          false
-     } else {
-          Patterns.EMAIL_ADDRESS.matcher(this).matches()
+fun String.is_valid_email() = if (TextUtils.isEmpty(this)) false
+                              else Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
+val formatter = _ComplexFormatter()
+fun Int.format() =
+     if (this in 0..999)
+          "$this"
+     else if(this in 1_000L..9_999L){
+          val res = "${this/1000},${this%1000}"
+          "$res"+   if (res.length<5) "0"
+                    else ""
      }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     else "${formatter.format(this.toLong())}"

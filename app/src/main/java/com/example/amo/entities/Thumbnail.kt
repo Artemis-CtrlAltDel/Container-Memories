@@ -7,5 +7,5 @@ import android.graphics.drawable.Drawable
 
 data class Thumbnail(var thumbnail: Int,
                      var thumbnailOwner: String,
-                     var thumbnailLikes: String? = "",
+                     var thumbnailLikes: Int = 0,
                      var thumbnailColor: Int)

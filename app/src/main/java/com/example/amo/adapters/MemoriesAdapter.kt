@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.entities.Memories
 import com.example.amo.others._ComplexFormatter
+import com.example.amo.others.format
 
 class MemoriesAdapter(val itemList : ArrayList<Memories>) :
     RecyclerView.Adapter<MemoriesAdapter.PageHolder>() {
@@ -36,8 +37,8 @@ class MemoriesAdapter(val itemList : ArrayList<Memories>) :
             Glide.with(memoryImage.context).load(itemList[position].memoryImage).into(memoryImage)
             Glide.with(memoryImage.context).load(itemList[position].memoryPfp).into(memoryPfp)
             memory_owner.text = itemList[position].memoryOwner.toString()
-            memoryLikes.text = "${formatter.format(itemList[position].memoryLikes.toString().toLong())} Moons"
-            memoryComments.text = "${itemList[position].memoryComments} Comments"
+            memoryLikes.text = "${itemList[position].memoryLikes.format()} Moons"
+            memoryComments.text = "${itemList[position].memoryComments.format()} Comments"
             memoryViews.text = "${itemList[position].memoryViews} Views"
             memoryDescription.text = itemList[position].memoryDescription
         }

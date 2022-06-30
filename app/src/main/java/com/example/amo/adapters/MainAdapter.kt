@@ -18,6 +18,7 @@ import com.example.amo.R
 import com.example.amo.activities.ContainersActivity
 import com.example.amo.entities.Thumbnail
 import com.example.amo.others._ComplexFormatter
+import com.example.amo.others.format
 
 class MainAdapter(val activity : Activity, val item : ArrayList<Thumbnail>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
@@ -42,10 +43,10 @@ class MainAdapter(val activity : Activity, val item : ArrayList<Thumbnail>) : Re
         holder.apply {
             Glide.with(thumbnailImageView.context).load(item[position].thumbnail).into(thumbnailImageView)
             thumbnailOwnerTextView.text = item[position].thumbnailOwner
-            if (item[position].thumbnailLikes.isNullOrEmpty()){
+            if (item[position].thumbnailLikes == 0){
                 thumbnailLikeWrapper.visibility = View.GONE
             }else{
-                thumbnailLikeCountTextView.text = likesFormatter.format(item[position].thumbnailLikes.toString().toLong())
+                thumbnailLikeCountTextView.text = item[position].thumbnailLikes.format()
                 thumbnailLikeWrapper.visibility = View.VISIBLE
             }
             thumbnailBullshitCardView.setCardBackgroundColor(ColorStateList.valueOf(thumbnailImageView.context.getColor(item[position].thumbnailColor)))

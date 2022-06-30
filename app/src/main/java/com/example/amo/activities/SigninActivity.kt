@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -14,6 +13,8 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.amo.R
 import com.example.amo.databinding.ActivitySigninBinding
+import com.example.amo.others.decode
+import com.example.amo.others.fetch
 import org.json.JSONObject
 
 class SigninActivity : AppCompatActivity() {

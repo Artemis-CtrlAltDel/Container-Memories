@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".activities.MemoriesActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.ContainersActivity"
             android:exported="false" />

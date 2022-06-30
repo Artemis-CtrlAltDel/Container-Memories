@@ -49,9 +49,9 @@ class HomeFragment : Fragment() {
             val thumbnailTitle2 = "Username_2"
             val thumbnailTitle3 = "hada_shi_zaml_lidar_had_username"
 
-            val thumbnailLikes1 = ""
-            val thumbnailLikes2 = "1520"
-            val thumbnailLikes3 = "37373"
+            val thumbnailLikes1 = 0
+            val thumbnailLikes2 = 1520
+            val thumbnailLikes3 = 37373
 
             val thumbnail1 = Thumbnail(
                 R.drawable.collection_1, thumbnailTitle1, thumbnailLikes1, R.color.color_random_bullshit_9)
