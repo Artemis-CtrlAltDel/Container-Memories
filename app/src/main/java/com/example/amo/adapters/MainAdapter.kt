@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.activities.ContainersActivity
 import com.example.amo.entities.Thumbnail
+import com.example.amo.others._ComplexFormatter
 
 class MainAdapter(val activity : Activity, val item : ArrayList<Thumbnail>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 

@@ -66,11 +66,6 @@ class MainActivity : AppCompatActivity() {
 //        animator.addUpdateListener {
 //            binding.toolbar.setTitle("title${it.animatedValue}")
 //        }
-//        var x = "test"
-//        x = x.addEmoji()
-//        binding.toolbar.fadeOut()
-//        binding.bottomAppBar.fadeOut()
-//        fadeOut(binding.toolbar)
 
         window.statusBarColor = getColor(R.color.white)
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)

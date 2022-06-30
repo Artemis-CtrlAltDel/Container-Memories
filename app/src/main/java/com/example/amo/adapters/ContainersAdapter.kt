@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.entities.Containers
+import com.example.amo.others._ComplexFormatter
 import kotlin.collections.ArrayList
 
 class ContainersAdapter(val itemList : ArrayList<Containers>) : RecyclerView.Adapter<ContainersAdapter.ViewHolder>() {

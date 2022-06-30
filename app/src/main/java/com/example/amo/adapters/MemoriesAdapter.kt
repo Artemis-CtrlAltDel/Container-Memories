@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.entities.Memories
+import com.example.amo.others._ComplexFormatter
 
 class MemoriesAdapter(val itemList : ArrayList<Memories>) :
     RecyclerView.Adapter<MemoriesAdapter.PageHolder>() {

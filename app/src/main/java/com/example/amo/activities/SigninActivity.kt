@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -31,8 +32,6 @@ class SigninActivity : AppCompatActivity() {
             val sp = getSharedPreferences("user_data", MODE_PRIVATE)
             val editor = sp.edit()
 
-//            emailTextBox.requestFocus()
-
             signinButton.setOnClickListener {
 
                 var email = emailTextBox.text.toString()
@@ -45,9 +44,12 @@ class SigninActivity : AppCompatActivity() {
                         val json = JSONObject(it)
 
                         val token = json.getString("token").decode()
-//                        json.getString("token")
 
-                        editor.putString("token", json.getString("token"))
+                        val fetch_result = token.fetch("email")
+
+                        if (fetch_result.first)
+                            editor.putString("email", fetch_result.second)
+
                         editor.apply()
 
                         startActivity(Intent(applicationContext, MainActivity::class.java))
@@ -55,8 +57,6 @@ class SigninActivity : AppCompatActivity() {
                     },
                     {
                         Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
-//                        Log.e("FAILED message : ", "${it.message}")
-//                        Log.e("FAILED stack trace : ", "${it.printStackTrace()}" )
                     }
                 )
                 {

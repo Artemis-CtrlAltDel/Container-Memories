@@ -48,8 +48,6 @@ class SignupActivity : AppCompatActivity() {
                     },
                     {
                         Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
-//                        Log.e("FAILED message : ", "${it.message}")
-//                        Log.e("FAILED stack trace : ", "${it.printStackTrace()}" )
                     }
                 )
                 {

@@ -1,7 +1,6 @@
 package com.example.amo.adapters
 
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.entities.Post
+import com.example.amo.others._ComplexFormatter
 
 class PostAdapter(val item: ArrayList<Post>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
     private val formatter = _ComplexFormatter()

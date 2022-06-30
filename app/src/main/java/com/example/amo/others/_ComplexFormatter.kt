@@ -1,4 +1,4 @@
-package com.example.amo.adapters
+package com.example.amo.others
 
 import java.util.*
 
