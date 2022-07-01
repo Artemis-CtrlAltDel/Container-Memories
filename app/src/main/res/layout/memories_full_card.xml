@@ -122,7 +122,7 @@
                         <ImageButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/draw_recent_files_btn"
+                            android:background="@drawable/draw_memories_rounded_rectangle"
                             android:outlineSpotShadowColor="@color/color_complementary_0"
                             android:padding="10dp"
                             android:src="@drawable/ic_like_containers"
@@ -162,7 +162,7 @@
                         <ImageButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/draw_recent_files_btn"
+                            android:background="@drawable/draw_memories_rounded_rectangle"
                             android:outlineSpotShadowColor="@color/color_complementary_0"
                             android:padding="10dp"
                             android:src="@drawable/ic_comment"
