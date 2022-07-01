@@ -38,8 +38,8 @@ class MemoriesAdapter(val itemList : ArrayList<Memories>) :
             Glide.with(memoryImage.context).load(itemList[position].memoryPfp).into(memoryPfp)
             memory_owner.text = itemList[position].memoryOwner.toString()
             memoryLikes.text = "${itemList[position].memoryLikes.format()} Moons"
-            memoryComments.text = "${itemList[position].memoryComments.format()} Comments"
-            memoryViews.text = "${itemList[position].memoryViews} Views"
+            memoryComments.text = "${itemList[position].memoryReposts.format()} Comments"
+            memoryViews.text = "${itemList[position].memoryViews.format()} Views"
             memoryDescription.text = itemList[position].memoryDescription
         }
     }

@@ -101,29 +101,31 @@ class MemoriesActivity : AppCompatActivity() {
                 }
             }
 
-            val memoryLikes1 = 0
-            val memoryLikes2 = 56511
-            val memoryLikes3 = 9965
+            val memory_likes1 = 0
+            val memory_likes2 = 56511
+            val memory_likes3 = 9965
+
+            val memory_reposts = 6018
 
             val memoriesList : ArrayList<Memories> = arrayListOf(
                 Memories(
-                    R.drawable.collection_1, R.drawable.pfp1, "Sunflower_2022", memoryLikes1, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_1, R.drawable.pfp1, "Sunflower_2022", memory_likes1, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_2, R.drawable.pfp1, "Sunflower_2022", memoryLikes2, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_2, R.drawable.pfp1, "Sunflower_2022", memory_likes2, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_3, R.drawable.pfp1, "Sunflower_2022", memoryLikes3, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_3, R.drawable.pfp1, "Sunflower_2022", memory_likes3, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_4, R.drawable.pfp1, "Sunflower_2022", memoryLikes1, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_4, R.drawable.pfp1, "Sunflower_2022", memory_likes1, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_5, R.drawable.pfp1, "Sunflower_2022", memoryLikes2, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_5, R.drawable.pfp1, "Sunflower_2022", memory_likes2, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_6, R.drawable.pfp1, "Sunflower_2022", memoryLikes3, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_6, R.drawable.pfp1, "Sunflower_2022", memory_likes3, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_7, R.drawable.pfp1, "Sunflower_2022", memoryLikes1, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_7, R.drawable.pfp1, "Sunflower_2022", memory_likes1, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_8, R.drawable.pfp1, "Sunflower_2022", memoryLikes2, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_8, R.drawable.pfp1, "Sunflower_2022", memory_likes2, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 ,Memories(
-                    R.drawable.collection_9, R.drawable.pfp1, "Sunflower_2022", memoryLikes3, 6018, "65,153", baseContext.getString(R.string.string_random_text))
+                    R.drawable.collection_9, R.drawable.pfp1, "Sunflower_2022", memory_likes3, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
                 )
 
             pager.adapter = MemoriesAdapter(memoriesList)
