@@ -129,16 +129,7 @@ class MainActivity : AppCompatActivity() {
 
             toolbar.setOnMenuItemClickListener {
                 when (it.itemId) {
-//                    R.id.search -> {
-//                        Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
-//                        true
-//                    }
-//                    R.id.notifications -> {
-//                        Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
-//                        true
-//                    }
                     R.id.post_create -> {
-//                        Toast.makeText(baseContext, "Coming soon", Toast.LENGTH_SHORT).show()
                         transaction = fm.beginTransaction()
                         transaction.replace(R.id.fragment_content, addPostFragment).commit()
                         toolbar.visibility = View.INVISIBLE
@@ -163,7 +154,6 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 bottomAppBarHome,
                 bottomAppBarExplore,
-//                bottomAppBarProfile
             ).forEach {
 
                 it.setOnClickListener {

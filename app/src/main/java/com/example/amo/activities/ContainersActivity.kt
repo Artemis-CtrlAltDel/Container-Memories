@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.core.widget.NestedScrollView
@@ -41,13 +42,17 @@ class ContainersActivity : AppCompatActivity() {
             var containersList : ArrayList<Containers> = arrayListOf()
 
             if (intent.getStringExtra("intent_source") == "MAIN ADAPTER TO CONTAINERS"){
-                containersList.add(Containers(intent.getIntExtra("thumbnailImage", R.drawable.collection_1), R.drawable.pfp,
-                    intent.getStringExtra("thumbnailOwner")!!.replace("@", ""), "", intent.getStringExtra("thumbnailLikes")))
+                containersList.add(Containers(
+                    intent.getIntExtra("thumbnailImage", R.drawable.collection_1),
+                    R.drawable.pfp,
+                    intent.getStringExtra("thumbnailOwner")!!.replace("@", ""),
+                    "",
+                    intent.getIntExtra("thumbnailLikes", 0)))
             }
 
-            containersList.add(Containers(R.drawable.collection_1, R.drawable.pfp, "Username 1",  "Allo what the shit 1", "321561691", 1))
-            containersList.add(Containers(R.drawable.collection_2, R.drawable.pfp1, "Username 2",  "Allo what the shit 2", "", 0))
-            containersList.add(Containers(R.drawable.collection_3, R.drawable.pfp2, "Username 3",  "Allo what the shit 3", "2", 1))
+            containersList.add(Containers(R.drawable.collection_1, R.drawable.pfp, "Username 1",  "Allo what the shit 1", 321561691, 1))
+            containersList.add(Containers(R.drawable.collection_2, R.drawable.pfp1, "Username 2",  "Allo what the shit 2", 0, 0))
+            containersList.add(Containers(R.drawable.collection_3, R.drawable.pfp2, "Username 3",  "Allo what the shit 3", 2, 1))
 
             val adapter = ContainersAdapter(containersList)
             recycler.adapter = adapter

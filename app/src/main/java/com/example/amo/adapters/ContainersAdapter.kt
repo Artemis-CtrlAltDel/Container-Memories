@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.entities.Containers
 import com.example.amo.others._ComplexFormatter
+import com.example.amo.others.format
 import kotlin.collections.ArrayList
 
 class ContainersAdapter(val itemList : ArrayList<Containers>) : RecyclerView.Adapter<ContainersAdapter.ViewHolder>() {
@@ -41,19 +42,27 @@ class ContainersAdapter(val itemList : ArrayList<Containers>) : RecyclerView.Ada
             Glide.with(userImage.context).load(itemList[position].userPfp).into(userPfp)
             userName.text = itemList[position].userName
             userDescription.text = itemList[position].userDescription
-            userLikes.text = if (itemList[position].userLikes == "0" || itemList[position].userLikes.isNullOrEmpty()){ ""
-                            }else{ likesFormatter.format(itemList[position].userLikes.toString().toLong()) }
-            moonIt.imageTintList =  if (itemList[position].userImageState == 0){ ColorStateList.valueOf(userImage.context.getColor(R.color.white))
-                                    }else{ ColorStateList.valueOf(userImage.context.getColor(R.color.color_harmony_0)) }
+
+            userLikes.text =
+                if (itemList[position].userLikes == 0)
+                    ""
+                else
+                    itemList[position].userLikes.format()
+
+            moonIt.imageTintList =
+                if (itemList[position].userImageState == 0)
+                    ColorStateList.valueOf(userImage.context.getColor(R.color.white))
+                else
+                    ColorStateList.valueOf(userImage.context.getColor(R.color.color_harmony_0))
 
             moonIt.setOnClickListener {
                 if (itemList[position].userImageState == 1){
                     itemList[position].userImageState = 0
-                    itemList[position].userLikes = (itemList[position].userLikes.toString().toLong() - 1).toString()
+                    itemList[position].userLikes--
                     notifyDataSetChanged()
                 }else{
                     itemList[position].userImageState = 1
-                    itemList[position].userLikes = if (itemList[position].userLikes.isNullOrEmpty()){ "1" }else{ (itemList[position].userLikes.toString().toLong() + 1).toString() }
+                    itemList[position].userLikes++
                     notifyDataSetChanged()
                 }
             }
@@ -61,11 +70,11 @@ class ContainersAdapter(val itemList : ArrayList<Containers>) : RecyclerView.Ada
                 override fun onDoubleClick(v: View?) {
                     if (itemList[position].userImageState == 1){
                         itemList[position].userImageState = 0
-                        itemList[position].userLikes = (itemList[position].userLikes.toString().toLong() - 1).toString()
+                        itemList[position].userLikes--
                         notifyDataSetChanged()
                     }else{
                         itemList[position].userImageState = 1
-                        itemList[position].userLikes = if (itemList[position].userLikes.isNullOrEmpty()){ "1" }else{ (itemList[position].userLikes.toString().toLong() + 1).toString() }
+                        itemList[position].userLikes++
                         notifyDataSetChanged()
                     }
                 }
