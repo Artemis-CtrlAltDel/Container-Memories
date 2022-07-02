@@ -17,9 +17,10 @@ import com.bumptech.glide.Glide
 import com.example.amo.R
 import com.example.amo.entities.Post
 import com.example.amo.others._ComplexFormatter
+import com.example.amo.others.format
 
 class PostAdapter(val item: ArrayList<Post>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
-    private val formatter = _ComplexFormatter()
+
     private lateinit var animation_like : Animation
     private lateinit var animation_repost : Animation
 
@@ -114,8 +115,8 @@ class PostAdapter(val item: ArrayList<Post>) : RecyclerView.Adapter<PostAdapter.
             postTime.text = item[position].post_time
             postDesc.text = item[position].post_description
             postKeys.text = item[position].post_keys
-            postLikes.text = formatter.format(item[position].post_likes.toLong())
-            postReposts.text = formatter.format(item[position].post_reposts.toLong())
+            postLikes.text = item[position].post_likes.format()
+            postReposts.text = item[position].post_reposts.format()
 
         }
     }

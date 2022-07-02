@@ -89,7 +89,8 @@
             android:layout_gravity="bottom"
             app:layout_anchorGravity="bottom"
             android:background="@drawable/draw_white_gradient_bg"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -204,6 +204,42 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="Tags"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_text_primary_1"
+                        android:paddingVertical="5dp"/>
+                    <LinearLayout
+                        android:id="@+id/memory_tag_pack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/draw_rounded_rectangle_signin"
+                            android:elegantTextHeight="true"
+                            android:fontFamily="@font/amiko_semibold"
+                            android:lineSpacingExtra="3dp"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="5dp"
+
+                            android:text="tag1"
+                            android:textColor="#54a0ff"
+                            android:textSize="13.5sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="15dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Description"
                         android:textSize="17sp"
                         android:textStyle="bold"

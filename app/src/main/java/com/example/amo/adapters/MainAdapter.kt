@@ -22,7 +22,6 @@ import com.example.amo.others.format
 
 class MainAdapter(val activity : Activity, val item : ArrayList<Thumbnail>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
-    val likesFormatter = _ComplexFormatter()
     val intent = Intent(activity, ContainersActivity::class.java)
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

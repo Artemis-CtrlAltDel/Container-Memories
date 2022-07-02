@@ -18,8 +18,6 @@ import kotlin.collections.ArrayList
 
 class ContainersAdapter(val itemList : ArrayList<Containers>) : RecyclerView.Adapter<ContainersAdapter.ViewHolder>() {
 
-    private val likesFormatter = _ComplexFormatter()
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val userImage : ImageView = itemView.findViewById(R.id.user_image)
         val userPfp : ImageView = itemView.findViewById(R.id.user_pfp)

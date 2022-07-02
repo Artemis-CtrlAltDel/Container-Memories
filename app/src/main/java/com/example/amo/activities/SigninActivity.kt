@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -38,15 +39,17 @@ class SigninActivity : AppCompatActivity() {
                 var email = emailTextBox.text.toString()
                 var pass = passTextBox.text.toString()
 
-                var url = "http://192.168.8.103:8080/authenticate/"
+                var url = "http://192.168.8.101:8080/authenticate/"
                 var string_request : StringRequest = object : StringRequest(
                     Request.Method.POST, url,
                     {
                         val json = JSONObject(it)
 
-                        val token = json.getString("token").decode()
+                        val token = json.getString("token")
 
-                        val fetch_result = token.fetch("email")
+                        Log.e("TOKEN : ", token.toString())
+
+                        val fetch_result = token.decode().fetch("email")
 
                         if (fetch_result.first)
                             editor.putString("email", fetch_result.second)

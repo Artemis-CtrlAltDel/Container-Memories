@@ -101,32 +101,40 @@ class MemoriesActivity : AppCompatActivity() {
                 }
             }
 
-            val memory_likes1 = 0
-            val memory_likes2 = 56511
-            val memory_likes3 = 9965
-
+            val memory_pair_medias_likes = hashMapOf(
+                R.drawable.collection_1 to 0,
+                R.drawable.collection_2 to 0,
+                R.drawable.collection_3 to 0,
+                R.drawable.collection_4 to 0,
+                R.drawable.collection_5 to 0,
+                R.drawable.collection_6 to 0,
+                R.drawable.collection_7 to 0,
+                R.drawable.collection_8 to 0,
+                R.drawable.collection_9 to 0,
+            )
             val memory_reposts = 6018
+            val memory_owner = "Sunflower_2022"
+            val memory_pfp = R.drawable.pfp1
+            val memory_view = 65153
+            val memory_description = getString(R.string.string_random_text)
+            val memory_tags = arrayListOf("tag_1", "tag_2", "tag_3")
 
-            val memoriesList : ArrayList<Memories> = arrayListOf(
-                Memories(
-                    R.drawable.collection_1, R.drawable.pfp1, "Sunflower_2022", memory_likes1, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_2, R.drawable.pfp1, "Sunflower_2022", memory_likes2, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_3, R.drawable.pfp1, "Sunflower_2022", memory_likes3, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_4, R.drawable.pfp1, "Sunflower_2022", memory_likes1, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_5, R.drawable.pfp1, "Sunflower_2022", memory_likes2, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_6, R.drawable.pfp1, "Sunflower_2022", memory_likes3, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_7, R.drawable.pfp1, "Sunflower_2022", memory_likes1, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_8, R.drawable.pfp1, "Sunflower_2022", memory_likes2, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
-                ,Memories(
-                    R.drawable.collection_9, R.drawable.pfp1, "Sunflower_2022", memory_likes3, memory_reposts, 65153, baseContext.getString(R.string.string_random_text))
+            val memoriesList = arrayListOf<Memories>()
+
+            memory_pair_medias_likes.forEach { (media,media_likes) ->
+                memoriesList.add(
+                    Memories(
+                        media,
+                        memory_pfp,
+                        memory_owner,
+                        media_likes,
+                        memory_reposts,
+                        memory_view,
+                        memory_tags,
+                        memory_description
+                    )
                 )
+            }
 
             pager.adapter = MemoriesAdapter(memoriesList)
             pager.layoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.HORIZONTAL, false)

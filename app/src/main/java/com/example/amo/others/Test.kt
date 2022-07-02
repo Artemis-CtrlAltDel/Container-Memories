@@ -33,11 +33,12 @@ fun String.is_valid_email() = if (TextUtils.isEmpty(this)) false
 
 val formatter = _ComplexFormatter()
 fun Int.format() =
-     if (this in 0..999)
-          "$this"
-     else if(this in 1_000L..9_999L){
-          val res = "${this/1000},${this%1000}"
-          "$res"+   if (res.length<5) "0"
-                    else ""
+     when (this) {
+         in 0..999 -> "$this"
+         in 1_000L..9_999L -> {
+              val res = "${this/1000},${this%1000}"
+              "$res"+   if (res.length<5) "0"
+              else ""
+         }
+         else -> "${formatter.format(this.toLong())}"
      }
-     else "${formatter.format(this.toLong())}"

@@ -1,9 +1,10 @@
 package com.example.amo.entities
 
-data class Memories(var memoryImage : Int? = null,
-                    var memoryPfp : Int? = null,
-                    var memoryOwner : String? = null,
-                    var memoryLikes : Int = 0,
-                    var memoryReposts : Int = 0,
-                    var memoryViews : Int = 0,
-                    var memoryDescription : String? = "No Description Given")
+data class Memories(var memory_image : Int? = null,
+                    var memory_pfp : Int? = null,
+                    var memory_owner : String? = null,
+                    var memory_likes : Int = 0,
+                    var memory_reposts : Int = 0,
+                    var memory_views : Int = 0,
+                    var memory_tags : ArrayList<String> = arrayListOf(),
+                    var memory_description : String? = "No Description Given")

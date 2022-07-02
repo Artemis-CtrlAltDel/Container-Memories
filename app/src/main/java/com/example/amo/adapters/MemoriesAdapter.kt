@@ -15,8 +15,6 @@ import com.example.amo.others.format
 class MemoriesAdapter(val itemList : ArrayList<Memories>) :
     RecyclerView.Adapter<MemoriesAdapter.PageHolder>() {
 
-    private val formatter = _ComplexFormatter()
-
     class PageHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var memoryImage : ImageView = itemView.findViewById(R.id.memory_image)
         var memoryPfp : ImageView = itemView.findViewById(R.id.memory_pfp)
@@ -34,13 +32,15 @@ class MemoriesAdapter(val itemList : ArrayList<Memories>) :
     override fun onBindViewHolder(holder: PageHolder, position: Int) {
 
         holder.apply {
-            Glide.with(memoryImage.context).load(itemList[position].memoryImage).into(memoryImage)
-            Glide.with(memoryImage.context).load(itemList[position].memoryPfp).into(memoryPfp)
-            memory_owner.text = itemList[position].memoryOwner.toString()
-            memoryLikes.text = "${itemList[position].memoryLikes.format()} Moons"
-            memoryComments.text = "${itemList[position].memoryReposts.format()} Comments"
-            memoryViews.text = "${itemList[position].memoryViews.format()} Views"
-            memoryDescription.text = itemList[position].memoryDescription
+            Glide.with(memoryImage.context).load(itemList[position].memory_image).into(memoryImage)
+            Glide.with(memoryImage.context).load(itemList[position].memory_pfp).into(memoryPfp)
+            memory_owner.text = itemList[position].memory_owner.toString()
+            memoryLikes.text = "${itemList[position].memory_likes.format()} Moons"
+            memoryComments.text = "${itemList[position].memory_reposts.format()} Comments"
+            memoryViews.text = "${itemList[position].memory_views.format()} Views"
+            memoryDescription.text = itemList[position].memory_description
+
+            
         }
     }
 
